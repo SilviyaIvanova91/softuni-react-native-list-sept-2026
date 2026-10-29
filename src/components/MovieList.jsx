@@ -1,11 +1,11 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import MovieCard from "./MovieCard";
 
 import { colors } from "../theme";
 
 export default function MovieList({ movies }) {
   return (
-    <View style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.header}>
         <Text style={styles.title}>Каталог Филми</Text>
         <Text style={styles.subtitle}>{movies.length} филма в колекцията</Text>
@@ -14,7 +14,7 @@ export default function MovieList({ movies }) {
       {movies.map((movie) => (
         <MovieCard key={movie.id} {...movie} />
       ))}
-    </View>
+    </ScrollView>
   );
 }
 
