@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 
 import { colors } from "../theme";
 
-export default function MovieList({ movies }) {
+export default function MovieList({ movies, onSelect }) {
   return (
     <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.header}>
@@ -12,7 +12,7 @@ export default function MovieList({ movies }) {
       </View>
 
       {movies.map((movie) => (
-        <MovieCard key={movie.id} {...movie} />
+        <MovieCard key={movie.id} {...movie} onSelect={() => onSelect(movie)} />
       ))}
     </ScrollView>
   );
