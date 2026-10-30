@@ -14,7 +14,7 @@ import MovieDetailsRow from "./MovieDetailsRow";
 
 export default function MovieDetails({ movie, onBack }) {
   return (
-    <View style={styles.content}>
+    <ScrollView contentContainerStyle={styles.content}>
       <View style={styles.topBar}>
         <Pressable style={styles.backButton} onPress={onBack}>
           <Text style={styles.backText}>Back</Text>
@@ -40,7 +40,7 @@ export default function MovieDetails({ movie, onBack }) {
         />
         <MovieDetailsRow label="Genre" value={movie.genre} />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
