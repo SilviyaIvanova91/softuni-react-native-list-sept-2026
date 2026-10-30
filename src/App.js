@@ -12,6 +12,10 @@ export default function App() {
     setSelectedMovie(movie);
   };
 
+  const backHandler = () => {
+    setSelectedMovie(null);
+  };
+
   return (
     <View
       style={{
@@ -20,7 +24,7 @@ export default function App() {
       }}
     >
       {selectedMovie ? (
-        <MovieDetails movie={selectedMovie} />
+        <MovieDetails movie={selectedMovie} onBack={backHandler} />
       ) : (
         <MovieList movies={data.movies} onSelect={selectMovieHandler} />
       )}

@@ -12,9 +12,15 @@ import { formatDuration } from "../utils/dateTimeUtils";
 import GenreTags from "./GenreTag";
 import MovieDetailsRow from "./MovieDetailsRow";
 
-export default function MovieDetails({ movie }) {
+export default function MovieDetails({ movie, onBack }) {
   return (
     <View style={styles.content}>
+      <View style={styles.topBar}>
+        <Pressable style={styles.backButton} onPress={onBack}>
+          <Text style={styles.backText}>Back</Text>
+        </Pressable>
+      </View>
+
       <Image source={{ uri: movie.posterUrl }} style={styles.poster} />
       <Text style={styles.title}>{movie.title}</Text>
       <Text style={styles.meta}>
